@@ -1,7 +1,8 @@
-package io.dkfarms
+package io.dkfarms.ui
 
 import android.app.Activity
 import android.os.Bundle
+import io.dkfarms.R
 
 /**
  * Splash screen

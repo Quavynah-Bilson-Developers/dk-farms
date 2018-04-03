@@ -5,9 +5,9 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.fabric'
 
 // query git for the SHA, Tag and commit count. Use these to automate versioning.
-//final def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
-//final
-//def gitCommitCount = Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
+final def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+final
+def gitCommitCount = Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
 
 android {
     compileSdkVersion versions.compileSdk
@@ -16,12 +16,12 @@ android {
         applicationId "io.dkfarms"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
-        versionCode 1
-        versionName "1.0"
-        archivesBaseName = "dk-farms"
+        versionCode gitCommitCount
+        versionName gitSha
+        archivesBaseName = "dkfarms-" + gitSha
         multiDexEnabled true
 
-//        buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+        buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
 
         final def filesAuthorityValue = applicationId + ".shareprovider"
         buildConfigField "String", "FILES_AUTHORITY", "\"${filesAuthorityValue}\""
@@ -85,10 +85,6 @@ dependencies {
     implementation("com.github.bumptech.glide:recyclerview-integration:${versions.glide}") {
         transitive = false
     }
-
-    //Data binding for Java classes
-    implementation "com.jakewharton:butterknife:${versions.butterknife}"
-    annotationProcessor "com.jakewharton:butterknife-compiler:${versions.butterknife}"
 
     //server api
     implementation 'com.google.code.gson:gson:2.8.2'
