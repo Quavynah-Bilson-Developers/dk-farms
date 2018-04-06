@@ -18,7 +18,7 @@ android {
         targetSdkVersion versions.targetSdk
         versionCode gitCommitCount
         versionName gitSha
-        archivesBaseName = "dkfarms-" + gitSha
+        archivesBaseName = gitSha
         multiDexEnabled true
 
         buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
@@ -109,6 +109,7 @@ dependencies {
 
     //location
     implementation "com.google.android.gms:play-services-maps:${versions.google}"
+    implementation "com.google.android.gms:play-services-location:${versions.google}"
     implementation "com.google.android.gms:play-services-places:${versions.google}"
 
     //misc
