@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<item android:title="@string/personal">
+		<menu>
+			<group android:checkableBehavior="none">
+				<item
+					android:id="@+id/nav_location"
+					android:icon="@drawable/ic_location"
+					android:title="@string/location" />
+				<item
+					android:id="@+id/nav_orders"
+					android:icon="@drawable/ic_shopping_basket"
+					android:title="@string/orders" />
+				<item
+					android:id="@+id/nav_account"
+					android:icon="@drawable/ic_account"
+					android:title="@string/account" />
+			</group>
+		</menu>
+	</item>
+	
+	<item android:title="@string/options">
+		<menu>
+			<item
+				android:id="@+id/nav_feedback"
+				android:icon="@drawable/ic_feedback"
+				android:title="@string/feedback" />
+			<item
+				android:id="@+id/nav_tips"
+				android:icon="@drawable/ic_tips"
+				android:title="@string/daily_tips" />
+		</menu>
+	</item>
+
+</menu>

@@ -28,6 +28,7 @@
 -keep public class * extends com.bumptech.glide.module.AppGlideModule
 -keep class com.bumptech.glide.GeneratedAppGlideModuleImpl
 -keep class in.uncod.android.bypass.** { *; }
+-keep class io.peanutsdk.widget.** { *; }
 
 -keepattributes *Annotation*,Signature,Exceptions
 

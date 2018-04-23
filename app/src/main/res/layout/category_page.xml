@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:background="@color/background_lightish"
+	android:orientation="vertical">
+	
+	<io.peanutsdk.widget.BaselineGridTextView
+		android:id="@+id/category_header"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="start"
+		android:layout_marginTop="@dimen/padding_normal"
+		android:padding="@dimen/padding_normal"
+		tools:text="@string/farm_app_name"
+		android:textAlignment="gravity"
+		android:textAppearance="@style/TextAppearance.DribbbleShotTitle"
+		android:textColor="@color/text_primary_dark"
+		app:fontFamily="@font/nunito_extrabold" />
+	
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/category_list"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/background_light"
+		android:scrollbars="vertical"
+		android:scrollbarStyle="outsideOverlay"/>
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="@dimen/spacing_normal"
+	android:background="@color/background_light"
+	android:paddingTop="@dimen/padding_normal">
+	
+	<io.peanutsdk.widget.BaselineGridTextView
+		android:id="@+id/tip_title"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:gravity="start"
+		android:paddingEnd="@dimen/zero_padding"
+		android:paddingStart="@dimen/padding_normal"
+		android:textColor="@color/text_primary_dark"
+		android:textSize="20sp"
+		app:fontFamily="@font/nunito_semibold"
+		app:layout_constraintEnd_toStartOf="@id/close_tip"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="This is an awesome post from Admin bla vla vla" />
+	
+	<io.peanutsdk.widget.BaselineGridTextView
+		android:id="@+id/tip_timestamp"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:gravity="start"
+		android:paddingBottom="@dimen/spacing_normal"
+		android:paddingEnd="@dimen/zero_padding"
+		android:paddingStart="@dimen/padding_normal"
+		android:paddingTop="@dimen/spacing_micro"
+		android:textColor="@color/text_tertiary_dark"
+		android:textSize="16sp"
+		app:fontFamily="@font/nunito_semibold"
+		app:layout_constraintEnd_toStartOf="@id/close_tip"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tip_title"
+		tools:text="Posted on: August 23, 1993" />
+	
+	<ImageButton
+		android:id="@+id/close_tip"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/spacing_micro"
+		android:layout_marginTop="@dimen/spacing_micro"
+		android:background="@null"
+		android:paddingEnd="@dimen/padding_normal"
+		android:paddingStart="@dimen/zero_padding"
+		android:src="@drawable/ic_close_down"
+		android:tint="@color/dribbble_super_dark"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<io.peanutsdk.widget.FourThreeImageView
+		android:id="@+id/tip_image"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:src="@color/content_placeholder"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tip_timestamp" />
+	
+	<io.peanutsdk.widget.BaselineGridTextView
+		android:id="@+id/tip_content"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:ellipsize="end"
+		android:gravity="start"
+		android:maxLines="6"
+		android:padding="@dimen/padding_normal"
+		android:textColor="@color/text_secondary_dark"
+		android:textSize="18sp"
+		app:fontFamily="@font/nunito_semibold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tip_image"
+		tools:text="@tools:sample/lorem/random" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/background_light"
+	tools:context=".ui.AuthActivity">
+	
+	<android.support.constraint.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		
+		
+		<LinearLayout
+			android:id="@+id/container"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="center"
+			android:orientation="vertical"
+			android:paddingEnd="@dimen/padding_dialog"
+			android:paddingStart="@dimen/padding_dialog"
+			android:paddingTop="@dimen/spacing_huge">
+			
+			<io.peanutsdk.widget.BaselineGridTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="start"
+				android:paddingBottom="@dimen/spacing_normal"
+				android:paddingTop="@dimen/padding_normal"
+				android:text="@string/welcome_back"
+				android:textAppearance="@style/TextAppearance.DribbbleShotDescription"
+				android:textColor="@color/text_primary_dark"
+				android:textSize="26sp"
+				android:textStyle="bold"
+				app:fontFamily="@font/nunito_semibold" />
+			
+			<io.peanutsdk.widget.BaselineGridTextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="start"
+				android:text="@string/welcome_desc"
+				android:textAppearance="@style/TextAppearance.DribbbleShotDescription"
+				android:textColor="@color/text_secondary_dark"
+				app:fontFamily="@font/nunito_semibold" />
+			
+			<android.support.design.widget.TextInputLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="@dimen/spacing_xlarge"
+				app:hintTextAppearance="@style/TextAppearance.FloatLabelHint">
+				
+				<android.support.design.widget.TextInputEditText
+					android:id="@+id/email_content"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/nunito_semibold"
+					android:hint="@string/email_address"
+					android:imeOptions="actionNext"
+					android:inputType="textEmailAddress"
+					android:textColor="@color/text_secondary_dark" />
+			
+			</android.support.design.widget.TextInputLayout>
+			
+			<android.support.design.widget.TextInputLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				app:hintTextAppearance="@style/TextAppearance.FloatLabelHint"
+				app:passwordToggleDrawable="@drawable/asl_password_visibility"
+				app:passwordToggleEnabled="true">
+				
+				<io.peanutsdk.widget.PasswordEntry
+					android:id="@+id/password_content"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/nunito_semibold"
+					android:hint="@string/password"
+					android:imeOptions="actionDone"
+					android:inputType="textPassword"
+					android:textColor="@color/text_secondary_dark" />
+			
+			</android.support.design.widget.TextInputLayout>
+			
+			<android.support.design.widget.TextInputLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				app:hintTextAppearance="@style/TextAppearance.FloatLabelHint">
+				
+				<android.support.design.widget.TextInputEditText
+					android:id="@+id/username_content"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/nunito_semibold"
+					android:hint="@string/username"
+					android:imeOptions="actionNext"
+					android:inputType="textPersonName|textCapWords"
+					android:visibility="gone"
+					android:textColor="@color/text_secondary_dark" />
+			
+			</android.support.design.widget.TextInputLayout>
+			
+			<android.support.design.widget.TextInputLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				app:hintTextAppearance="@style/TextAppearance.FloatLabelHint">
+				
+				<android.support.design.widget.TextInputEditText
+					android:id="@+id/phone_content"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:fontFamily="@font/nunito_semibold"
+					android:hint="@string/phone"
+					android:imeOptions="actionNext"
+					android:inputType="phone"
+					android:visibility="gone"
+					android:textColor="@color/text_secondary_dark" />
+			
+			</android.support.design.widget.TextInputLayout>
+			
+			<Button
+				android:id="@+id/dob_button"
+				style="@style/Widget.AppCompat.Button.Borderless"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end"
+				android:onClick="pickDOB"
+				android:paddingEnd="@dimen/padding_dialog"
+				android:paddingStart="@dimen/padding_dialog"
+				android:text="@string/dob_text"
+				android:visibility="gone"
+				android:textColor="@color/text_primary_dark" />
+			
+			<FrameLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/padding_dialog">
+				
+				<Button
+					android:id="@+id/register_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="start"
+					android:background="@drawable/button_background"
+					android:onClick="createAccount"
+					android:paddingEnd="@dimen/padding_dialog"
+					android:paddingStart="@dimen/padding_dialog"
+					android:stateListAnimator="@animator/raise"
+					android:text="@string/register"
+					android:textColor="@color/text_primary_light" />
+				
+				<Button
+					android:id="@+id/login_button"
+					style="@style/Widget.AppCompat.Button.Borderless"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="end"
+					android:onClick="doLogin"
+					android:paddingEnd="@dimen/padding_dialog"
+					android:paddingStart="@dimen/padding_dialog"
+					android:text="@string/login"
+					android:textColor="@color/accent" />
+			
+			</FrameLayout>
+			
+			<Button
+				android:id="@+id/forgot_password"
+				style="@style/Widget.AppCompat.Button.Borderless"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end"
+				android:layout_marginTop="@dimen/padding_dialog"
+				android:clickable="true"
+				android:focusable="true"
+				android:fontFamily="@font/nunito_semibold"
+				android:onClick="resetPassword"
+				android:paddingBottom="@dimen/spacing_normal"
+				android:paddingTop="@dimen/spacing_normal"
+				android:text="@string/forgot_password"
+				android:textAppearance="@style/TextAppearance.DribbbleShotDescription"
+				android:textColor="@color/text_secondary_dark" />
+		
+		</LinearLayout>
+	
+	</android.support.constraint.ConstraintLayout>
+
+</ScrollView>

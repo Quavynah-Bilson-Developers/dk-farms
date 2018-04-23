@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	tools:context=".ui.ProductActivity">
+	
+	<android.support.constraint.ConstraintLayout
+		android:id="@+id/container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/background_light" />
+		
+		<FrameLayout
+			android:id="@+id/action_wrapper"
+			android:layout_width="match_parent"
+			android:layout_height="?android:actionBarSize"
+			android:elevation="@dimen/z_app_bar">
+			
+			<ImageButton
+				android:id="@+id/back"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="start"
+				android:background="@null"
+				android:padding="@dimen/padding_normal"
+				android:src="@drawable/ic_arrow_back_padded"
+				android:tint="@color/black"
+				tools:ignore="ContentDescription" />
+			
+			<ImageButton
+				android:id="@+id/add"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="end"
+				android:layout_marginEnd="@dimen/padding_normal"
+				android:background="@null"
+				android:padding="@dimen/padding_normal"
+				android:src="@drawable/ic_shopping_basket"
+				android:tint="@color/black"
+				tools:ignore="ContentDescription" />
+		
+		</FrameLayout>
+		
+		<io.peanutsdk.widget.BaselineGridTextView
+			android:id="@+id/product_name"
+			style="@style/TextAppearance.DribbbleShotTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/padding_normal"
+			android:textColor="@color/text_primary_dark"
+			app:fontFamily="@font/nunito_semibold"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/action_wrapper"
+			tools:text="German SugarCane" />
+		
+		<io.peanutsdk.widget.BaselineGridTextView
+			android:id="@+id/product_desc"
+			style="@style/TextAppearance.DribbbleShotDescription"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:ellipsize="end"
+			android:maxLines="4"
+			android:paddingBottom="@dimen/spacing_normal"
+			android:paddingEnd="@dimen/padding_room_for_fab"
+			android:paddingStart="@dimen/padding_normal"
+			app:fontFamily="@font/nunito_semibold"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/product_name"
+			tools:text="@tools:sample/lorem/random" />
+		
+		<io.peanutsdk.widget.ParallaxScrimageView
+			android:id="@+id/product_image"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/spacing_normal"
+			android:minHeight="@dimen/shot_collapsed_app_bar_height"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/product_desc"
+			tools:src="@color/content_placeholder" />
+		
+		<io.peanutsdk.widget.BaselineGridTextView
+			android:id="@+id/product_price"
+			style="@style/TextAppearance.DribbbleShotTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFeatureSettings="onum"
+			android:padding="@dimen/padding_normal"
+			android:textColor="@color/accent"
+			app:fontFamily="@font/nunito_semibold"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/product_image"
+			tools:text="Price: GHC 25.00" />
+		
+		<io.peanutsdk.widget.BaselineGridTextView
+			android:id="@+id/product_qty"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:fontFeatureSettings="onum"
+			android:paddingBottom="@dimen/padding_normal"
+			android:paddingEnd="@dimen/zero_padding"
+			android:paddingStart="@dimen/padding_normal"
+			android:textColor="@color/text_secondary_dark"
+			android:textSize="18sp"
+			app:fontFamily="@font/nunito_semibold"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/product_price"
+			tools:text="Quantity left: 4" />
+		
+		<Spinner
+			android:id="@+id/product_weight_spinner"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:dropDownSelector="@color/text_secondary_dark"
+			android:gravity="start"
+			android:prompt="@string/select_weight"
+			android:spinnerMode="dropdown"
+			app:layout_constraintTop_toBottomOf="@id/product_qty" />
+	
+	</android.support.constraint.ConstraintLayout>
+
+</ScrollView>

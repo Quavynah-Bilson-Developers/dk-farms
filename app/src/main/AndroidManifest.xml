@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
 	package="io.dkfarms"
 	android:installLocation="auto">
 	
@@ -17,18 +18,85 @@
 	
 	<application
 		android:allowBackup="true"
+		android:appCategory="productivity"
 		android:icon="@mipmap/ic_launcher"
-		android:label="@string/app_name"
+		android:label="@string/farm_app_name"
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
-		android:theme="@style/DKFarms">
-		<activity android:name=".ui.SplashActivity">
+		android:theme="@style/DKFarms"
+		tools:replace="android:label">
+		<activity
+			android:name=".ui.SplashActivity"
+			android:screenOrientation="portrait"
+			android:theme="@style/DKFarms.FullScreen" />
+		
+		<activity-alias
+			android:name=".Launcher"
+			android:label="@string/farm_app_name"
+			android:targetActivity=".ui.SplashActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
+		</activity-alias>
+		
+		<activity
+			android:name=".ui.AuthActivity"
+			android:configChanges="keyboard|keyboardHidden|screenSize|orientation" />
+		<activity android:name=".ui.SearchActivity" />
+		<activity android:name=".ui.ProductActivity" />
+		<activity
+			android:name=".ui.HomeActivity"
+			android:configChanges="orientation|screenSize"
+			android:label="@string/title_activity_home"
+			android:theme="@style/DKFarms" />
+		<!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+		<meta-data
+			android:name="com.google.android.geo.API_KEY"
+			android:value="@string/google_maps_key" />
+		<meta-data
+			android:name="com.facebook.sdk.ApplicationId"
+			android:value="@string/facebook_app_id" />
+		
+		<activity
+			android:name="com.facebook.FacebookActivity"
+			android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+			android:label="@string/farm_app_name" />
+		<activity
+			android:name="com.facebook.CustomTabActivity"
+			android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				
+				<data android:scheme="@string/fb_login_protocol_scheme" />
+			</intent-filter>
 		</activity>
+		<activity
+			android:name=".ui.PurchasesActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name=".ui.DailyTipsActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name=".ui.AccountActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name=".ui.LocationActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name=".ui.OrderActivity"
+			android:configChanges="orientation|screenSize" />
 	</application>
 
 </manifest>

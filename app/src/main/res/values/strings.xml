@@ -1,3 +1,82 @@
 <resources>
-	<string name="app_name">DK Farms</string>
+	<string name="farm_app_name">DK Coker Farms©</string>
+	<string name="farm_app_desc">Your health is our concern</string>
+	<string name="password">Password</string>
+	<string name="email_address">Email address</string>
+	<string name="welcome_desc">Sign in or register</string>
+	<string name="welcome_back">Welcome back!</string>
+	<string name="forgot_password">I forgot my password</string>
+	<string name="register">Create account</string>
+	<string name="login">Sign In</string>
+	<string name="please_wait">Please wait</string>
+	<string name="search">Search</string>
+	<string name="fav">My Favorites</string>
+	<string name="logout">Logout</string>
+	
+	<!--Places API key-->
+	<string name="places_api_key">AIzaSyDriOK7-lHz0X1ztZ8lD6-VD3zq6JvjZKU</string>
+	
+	<!--Facebook-->
+	<string name="facebook_app_id">160649711422867</string>
+	<string name="fb_login_protocol_scheme">fb160649711422867</string>
+	<string name="title_activity_home">DK Farms</string>
+	<string name="navigation_drawer_open">Open navigation drawer</string>
+	<string name="navigation_drawer_close">Close navigation drawer</string>
+	<string name="nav_header_title">Android Studio</string>
+	<string name="nav_header_subtitle">android.studio@android.com</string>
+	<string name="nav_header_desc">Navigation header</string>
+	<string name="action_settings">Settings</string>
+	<string name="username">Username</string>
+	<string name="phone">Phone number</string>
+	<string name="dob_text">Set your date of birth</string>
+
+	<string name="home">Home</string>
+	<string name="personal">Personal</string>
+	<string name="location">Location</string>
+	<string name="orders">My Orders</string>
+	<string name="account">Account</string>
+	<string name="options">Options</string>
+	<string name="feedback">Feedback</string>
+	<string name="purchases">My purchases</string>
+	<string name="feedback_prompt">Know that your feedback would be strongly appreciated to help make this application better</string>
+	<string name="message_prompt">Enter your message here</string>
+	<string name="title_activity_maps">Map</string>
+	<string name="my_current_location">My current location</string>
+	<string name="update_location">Update location</string>
+	<string name="search_prompt_title">Search your products</string>
+	<string name="search_prompt_description">Tap the search icon to quickly query through your favorite products</string>
+	<string name="daily_tips">Daily Tips</string>
+	<string name="large_text">A feature discovery prompt focuses user attention on a specific UI element. It contains a tap target, indicated by a circular shape, which is surrounded by a larger area with a distinct background color.
+
+The prompt contains a single action, without additional actions present.
+
+Users may dismiss the prompt by using a swipe gesture or tapping outside of the prompt’s background area.</string>
+	<string name="no_location">Please set your current address</string>
+	<string name="select_weight">Select weight</string>
+	<string name="no_daily_tip_available">No daily tip available</string>
+	<string name="profile">Profile</string>
+	<string name="data">Data</string>
+	<string name="data_saving_content">Load lower resolution images in list in order to reduce data usage</string>
+	<string name="data_saving_mode">Data-saving mode</string>
+	<string name="clear_all_images_stored_in_cache">Clear all images stored in cache</string>
+	<string name="clear_cache">Clear cache</string>
+	<string name="about">About the app</string>
+	<string name="spread">Share</string>
+	<string name="share_content">Hello prospective user. Do you want to shop for food items
+	directly from your mobile phone? Look no further! DK Coker Farms Ltd© has the solution
+		for you. Download from the Google Play store</string>
+	<string name="share_data">Help share the app to make others enjoy these services</string>
+	<string name="empty_cart_prompt">You have no items in your shopping cart</string>
+	<string name="start_shopping">Start shopping</string>
+	<string name="subtotal">SubTotal:</string>
+	<string name="method_hint">Select payment method</string>
+	<string name="total">Grand Total:</string>
+	<string name="dcost">Delivery Cost:</string>
+	<string name="deliver_to">Deliver to:</string>
+	<string name="proceed_to_checkout">Proceed to checkout</string>
+	<string name="successful_purchase">Hurray! Your purchase was successful</string>
+	<string name="unsuccessful_purchase">Sorry cherished customer! We could not complete your
+		purchase</string>
+	<!--keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Dennis Bilson\.android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary | "C:\OpenSSL\bin\openssl" base64-->
+
 </resources>

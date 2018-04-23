@@ -8,12 +8,13 @@ buildscript {
             'glide'           : '4.6.1',
             'kotlin'          : '1.2.30',
             'retrofit'        : '2.3.0',
-            'supportLibrary'  : '27.1.0',
+            'supportLibrary'  : '27.1.1',
             'google'          : '12.0.1',
             'timber'          : '4.6.0',
             'butterknife'          : '8.8.1',
             'okhttp'          : '3.9.1',
-            'material_dialogs': '0.9.6.0'
+            'material_dialogs': '0.9.6.0',
+            'materialsearchview': '1.4.0'
     ]
 
     repositories {
@@ -26,7 +27,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
 
         classpath 'com.google.gms:google-services:3.2.0'

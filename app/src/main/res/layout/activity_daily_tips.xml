@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".ui.DailyTipsActivity">
+	
+	<Toolbar
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/primary"
+		android:navigationIcon="@drawable/ic_arrow_back_padded"
+		android:popupTheme="@style/DKFarms.PopupOverlay"
+		android:theme="@style/DKFarms.AppBarOverlay"
+		android:title="@string/daily_tips"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+	
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/tips_grid"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:scrollbarStyle="outsideOverlay"
+		android:scrollbars="vertical"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/toolbar" />
+	
+	<io.peanutsdk.widget.BaselineGridTextView
+		android:id="@+id/tips_empty"
+		style="@style/TextAppearance.DribbbleShotTitle"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:drawablePadding="@dimen/padding_normal"
+		android:drawableTop="@drawable/ic_empty"
+		android:gravity="center_horizontal"
+		android:text="@string/no_daily_tip_available"
+		android:textColor="@color/dark_icon"
+		android:textSize="20sp"
+		android:visibility="gone"
+		app:fontFamily="@font/nunito_semibold"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+</android.support.constraint.ConstraintLayout>

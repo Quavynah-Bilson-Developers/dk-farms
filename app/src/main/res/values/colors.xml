@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--Brown-->
+	<!--<color name="primary">#795548</color>-->
+	<!--<color name="primary_dark">#3E2723</color>-->
+	
+	<!--Green-->
+	<!--<color name="primary">#00695C</color>-->
+	<!--<color name="primary_dark">#004D40</color>-->
+	
+	<!--Dark-->
 	<color name="primary">#212121</color>
 	<color name="primary_dark">#000000</color>
-	<color name="accent">#FF4081</color>
+	
+	<!--Other props-->
+	<color name="accent">@color/primary</color>
+	<color name="google">#e0472c</color>
+	<color name="facebook">#35589f</color>
+	<color name="twitter">#50abe9</color>
+	<color name="linked_in">#0077ab</color>
+	<color name="transparent">#00FFFFFF</color>
 </resources>
