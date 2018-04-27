@@ -21,9 +21,10 @@ class Order : Parcelable {
 	
 	constructor()
 	
-	constructor(key: String, carts: List<Cart>, uid: String, method: String) {
+	constructor(key: String, carts: List<Cart>, uid: String, method: String,
+	            timestamp: Long = Date(System.currentTimeMillis()).time) {
 		this.key = key
-		this.timestamp = Date(System.currentTimeMillis())
+		this.timestamp = Date(timestamp)
 		this.carts = carts
 		this.uid = uid
 		this.method = method

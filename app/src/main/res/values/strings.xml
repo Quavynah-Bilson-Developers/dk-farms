@@ -29,7 +29,7 @@
 	<string name="username">Username</string>
 	<string name="phone">Phone number</string>
 	<string name="dob_text">Set your date of birth</string>
-
+	
 	<string name="home">Home</string>
 	<string name="personal">Personal</string>
 	<string name="location">Location</string>
@@ -77,6 +77,9 @@ Users may dismiss the prompt by using a swipe gesture or tapping outside of the 
 	<string name="successful_purchase">Hurray! Your purchase was successful</string>
 	<string name="unsuccessful_purchase">Sorry cherished customer! We could not complete your
 		purchase</string>
+	<string name="product_progress_prompt">Your product should be ready in…</string>
+	<string name="confirm_delivery">Confirm delivery</string>
+	<string name="confirm_prompt">If you have received the products that you ordered for please confirm it by tapping the \\\‘confirm\\\’ button below</string>
 	<!--keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Dennis Bilson\.android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary | "C:\OpenSSL\bin\openssl" base64-->
 
 </resources>

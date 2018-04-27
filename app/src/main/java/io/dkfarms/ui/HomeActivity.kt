@@ -20,6 +20,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.afollestad.materialdialogs.MaterialDialog
+import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions.withCrossFade
 import com.bumptech.glide.request.target.Target
 import io.dkfarms.R
 import io.dkfarms.api.FarmBaseApi
@@ -89,11 +90,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 		if (api.isLoggedIn) {
 			val customer = api.customer
 			GlideApp.with(applicationContext)
+					.asBitmap()
 					.load(customer.photo)
 					.placeholder(R.drawable.avatar_placeholder)
 					.error(R.drawable.avatar_placeholder)
 					.fallback(R.drawable.avatar_placeholder)
 					.circleCrop()
+					.transition(withCrossFade())
 					.override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
 					.into(profile)
 			
@@ -269,9 +272,24 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 			PURCHASES_VIEW_CODE -> {
 				if (resultCode == PurchasesActivity.CART_CLEARED) {
 					invalidateOptionsMenu()
+					clearOrder()
 				}
 			}
 		}
+	}
+	
+	private fun clearOrder() {
+		api.firestore.collection("${Constants.ORDER_REF}/${api.uid}")
+				.get().addOnCompleteListener(this, { task ->
+					if (task.isSuccessful) {
+						for (document in task.result.documents) {
+							document.reference.delete().addOnCompleteListener(this, { _ -> })
+						}
+						
+						Snackbar.make(drawer, "Thank you for shopping with us", Snackbar.LENGTH_LONG)
+								.show()
+					}
+				})
 	}
 	
 	companion object {

@@ -15,6 +15,9 @@ import io.peanutsdk.widget.PeanutLoadingIndicator
  * Utility class for storing constants
  */
 object Constants {
+	//Time for division
+	const val MAX_DIV = 3000000
+	
 	//Categories
 	const val BUSH_MEAT = "Bush Meat"
 	const val CEREALS = "Cereal"

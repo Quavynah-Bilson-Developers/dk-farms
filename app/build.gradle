@@ -8,6 +8,7 @@ apply plugin: 'io.fabric'
 final def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 final
 def gitCommitCount = Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
+final def verName = gitCommitCount / 10
 
 android {
     compileSdkVersion versions.compileSdk
@@ -22,6 +23,7 @@ android {
         multiDexEnabled true
 
         buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+        buildConfigField "String", "VER_NAME", "\"${verName}\""
 
         final def filesAuthorityValue = applicationId + ".shareprovider"
         buildConfigField "String", "FILES_AUTHORITY", "\"${filesAuthorityValue}\""

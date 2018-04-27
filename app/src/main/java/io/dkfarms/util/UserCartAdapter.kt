@@ -16,6 +16,7 @@ import com.bumptech.glide.request.target.Target
 import io.dkfarms.BuildConfig
 import io.dkfarms.R
 import io.dkfarms.api.FarmBaseApi
+import io.dkfarms.api.PurchasePrefs
 import io.dkfarms.data.Cart
 import io.dkfarms.data.Order
 import io.peanutsdk.util.bindView
@@ -215,14 +216,14 @@ class UserCartAdapter(private val context: Activity,
 				paymentMethod.toString()
 		)
 		
-		if (BuildConfig.DEBUG) {
-			Log.v("UserCartAdapter", order.toString())
-		}
-		
 		//Document
 		document.set(order).addOnCompleteListener(context, { task ->
 			if (task.isSuccessful) {
+				//Set prefs locally
 				api.setHasPurchases(true)
+				val prefs = PurchasePrefs(context)
+				prefs.setFinalDate(order.timestamp!!.time.plus(300000000))
+				prefs.setCurrentProgress()
 				updateContentInCart()
 			} else {
 				loading.dismiss()
@@ -237,7 +238,9 @@ class UserCartAdapter(private val context: Activity,
 					if (task.isSuccessful) {
 						for (document in task.result.documents) {
 							if (document.exists()) {
-								document.reference.delete().addOnCompleteListener(context, { _ -> })
+								document.reference.update(hashMapOf(
+										Pair<String, Any?>("isViewable", false)
+								)).addOnCompleteListener(context, { _ -> })
 							}
 						}
 						
@@ -249,6 +252,7 @@ class UserCartAdapter(private val context: Activity,
 	}
 	
 	private fun showStateDialog(state: Boolean) {
+		if (loading.isShowing) loading.dismiss()
 		val v = inflater.inflate(R.layout.purchase_status_view, null, false)
 		val status = v.findViewById<TextView>(R.id.purchases_status_text)
 		val img = v.findViewById<ForegroundImageView>(R.id.purchases_status_img)
